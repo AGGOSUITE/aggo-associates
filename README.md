@@ -2,7 +2,7 @@
 
 Sitio web institucional de **AGGO Associates C.A.** — Firma de servicios profesionales en contabilidad, auditoría, impuestos, consultoría fiscal y gestión empresarial. Especialistas en el sector minero del sur del Ecuador.
 
-**🌐 Sitio en vivo:** https://www.aggoacountt.com
+**🌐 Sitio en vivo:** https://wwwaggoacountt.com
 
 ## Servicios
 - Contabilidad y Auditoría (NIIF / Superintendencia de Compañías)

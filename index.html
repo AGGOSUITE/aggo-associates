@@ -1098,9 +1098,11 @@
         </div>
       </div>
 
-      <form class="contact-form reveal" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
-        <input type="hidden" name="form-name" value="contacto">
-        <p style="display:none"><label>No llenar: <input name="bot-field"></label></p>
+      <form class="contact-form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="access_key" value="7e1b6917-e7a8-4347-a28d-dc02c6b355d7">
+        <input type="hidden" name="subject" value="Nuevo mensaje desde el sitio web — AGGO Associates">
+        <input type="hidden" name="from_name" value="Sitio Web AGGO Associates">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Nombre</label>
@@ -1222,15 +1224,59 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // form
-  function handleSubmit(e){
+  // form — envío real a Web3Forms (mensajes llegan a aggo.acountt@gmail.com)
+  async function handleSubmit(e){
     e.preventDefault();
-    const btn = e.target.querySelector('button[type="submit"]');
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
     const originalHTML = btn.innerHTML;
-    btn.innerHTML = '✓ Mensaje enviado';
-    btn.style.background = 'linear-gradient(135deg,#1f6e3a,#0f4a22)';
-    btn.style.color = '#fff';
-    setTimeout(() => { e.target.reset(); btn.innerHTML = originalHTML; btn.style.background=''; btn.style.color=''; }, 2800);
+    const note = form.querySelector('.form-note');
+    const originalNote = note ? note.innerHTML : '';
+
+    btn.disabled = true;
+    btn.innerHTML = 'Enviando…';
+    btn.style.opacity = '.7';
+
+    try {
+      const data = new FormData(form);
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        btn.innerHTML = '✓ Mensaje enviado';
+        btn.style.background = 'linear-gradient(135deg,#1f6e3a,#0f4a22)';
+        btn.style.color = '#fff';
+        btn.style.opacity = '1';
+        if (note) note.innerHTML = 'Gracias por contactarnos. Le responderemos en menos de 24 horas hábiles.';
+        setTimeout(() => {
+          form.reset();
+          btn.innerHTML = originalHTML;
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.disabled = false;
+          if (note) note.innerHTML = originalNote;
+        }, 4000);
+      } else {
+        throw new Error(result.message || 'Error desconocido');
+      }
+    } catch (err) {
+      btn.innerHTML = '✕ Error al enviar';
+      btn.style.background = 'linear-gradient(135deg,#7a1f1f,#4a0f0f)';
+      btn.style.color = '#fff';
+      btn.style.opacity = '1';
+      if (note) note.innerHTML = 'No se pudo enviar. Por favor escríbanos a aggo.acountt@gmail.com o al WhatsApp +593 99 107 1743.';
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.disabled = false;
+        if (note) note.innerHTML = originalNote;
+      }, 5000);
+    }
   }
 </script>
 </body>

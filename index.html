@@ -680,6 +680,181 @@
   .btn-wa:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(18,140,126,.5)}
   .cta-note{font-size:.8rem;color:var(--text-muted);margin-top:18px}
 
+  /* ============ AGGO SUITE (software propio) ============ */
+  .suite{
+    position:relative;
+    background:
+      radial-gradient(ellipse at 12% 0%, rgba(201,163,92,.10), transparent 55%),
+      radial-gradient(ellipse at 88% 100%, rgba(28,51,97,.55), transparent 55%),
+      linear-gradient(180deg, var(--navy-800) 0%, var(--navy-900) 100%);
+    border-top:1px solid rgba(201,163,92,.18);
+    border-bottom:1px solid rgba(201,163,92,.18);
+    overflow:hidden;
+  }
+  .suite::before{
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(201,163,92,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,163,92,.035) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(ellipse at 50% 0%, black 10%, transparent 70%);
+    -webkit-mask-image:radial-gradient(ellipse at 50% 0%, black 10%, transparent 70%);
+  }
+  .suite .container{position:relative;z-index:1}
+
+  .suite-brand{
+    display:flex;align-items:center;justify-content:center;gap:13px;margin-bottom:20px;
+  }
+  .suite-brand-mark{
+    width:46px;height:46px;border-radius:12px;flex-shrink:0;
+    background:linear-gradient(135deg, rgba(201,163,92,.22), rgba(201,163,92,.05));
+    border:1px solid rgba(201,163,92,.45);
+    display:flex;align-items:center;justify-content:center;color:var(--gold-light);
+    box-shadow:inset 0 0 18px rgba(201,163,92,.12);
+  }
+  .suite-brand-mark svg{width:24px;height:24px}
+  .suite-brand-text{text-align:left;line-height:1.15}
+  .suite-brand-text .n{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:1.6rem;font-weight:700;letter-spacing:2px;color:var(--silver-100);
+  }
+  .suite-brand-text .s{
+    display:block;font-size:.66rem;letter-spacing:3.5px;
+    text-transform:uppercase;color:var(--gold);margin-top:2px;
+  }
+
+  .suite-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .suite-card{
+    position:relative;display:flex;flex-direction:column;
+    padding:28px 26px 24px;border-radius:14px;
+    background:linear-gradient(160deg, rgba(28,51,97,.42), rgba(10,24,48,.64));
+    border:1px solid rgba(201,163,92,.18);
+    transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    overflow:hidden;
+  }
+  .suite-card::after{
+    content:'';position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+    transform:scaleX(0);transform-origin:left;transition:transform .4s ease;
+  }
+  .suite-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(201,163,92,.45);
+    box-shadow:0 22px 55px rgba(0,0,0,.48);
+  }
+  .suite-card:hover::after{transform:scaleX(1)}
+
+  .suite-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:18px}
+  .suite-icon{
+    width:52px;height:52px;border-radius:12px;flex-shrink:0;
+    background:linear-gradient(135deg, rgba(201,163,92,.18), rgba(201,163,92,.04));
+    border:1px solid rgba(201,163,92,.32);
+    display:flex;align-items:center;justify-content:center;color:var(--gold-light);
+  }
+  .suite-icon svg{width:26px;height:26px}
+
+  .suite-status{
+    display:inline-flex;align-items:center;gap:6px;flex-shrink:0;
+    padding:5px 11px;border-radius:999px;
+    font-size:.66rem;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;
+    border:1px solid rgba(201,163,92,.28);color:var(--text-muted);
+    background:rgba(255,255,255,.03);
+  }
+  .suite-status .dot{width:6px;height:6px;border-radius:50%;background:var(--silver-500)}
+  .suite-status.live{
+    color:#7ee2a8;border-color:rgba(37,211,102,.45);background:rgba(37,211,102,.08);
+  }
+  .suite-status.live .dot{background:#25D366;box-shadow:0 0 8px rgba(37,211,102,.9)}
+
+  .suite-card h3{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:1.45rem;font-weight:600;line-height:1.2;
+    color:var(--silver-100);margin-bottom:9px;
+  }
+  .suite-tagline{color:var(--gold-light);font-size:.85rem;line-height:1.5;margin-bottom:14px;font-weight:500}
+  .suite-desc{color:var(--text-muted);font-size:.85rem;line-height:1.6;margin-bottom:18px}
+
+  .suite-feats{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:9px}
+  .suite-feats li{display:flex;align-items:flex-start;gap:9px;color:var(--silver-300);font-size:.82rem;line-height:1.45}
+  .suite-feats li::before{
+    content:'';flex-shrink:0;margin-top:7px;width:5px;height:5px;border-radius:50%;background:var(--gold);
+  }
+
+  .suite-foot{margin-top:auto;padding-top:16px;border-top:1px solid rgba(201,163,92,.14)}
+  .suite-reg{
+    display:flex;align-items:flex-start;gap:9px;
+    color:var(--text-muted);font-size:.76rem;line-height:1.5;margin-bottom:9px;
+  }
+  .suite-reg svg{width:15px;height:15px;flex-shrink:0;margin-top:2px;color:var(--gold)}
+  .suite-reg strong{color:var(--gold-light);font-weight:600}
+  .suite-tie{
+    display:flex;align-items:center;gap:8px;
+    color:var(--silver-500);font-size:.74rem;
+  }
+  .suite-tie svg{width:14px;height:14px;flex-shrink:0;color:var(--silver-500)}
+
+  .suite-cta{
+    margin-top:46px;padding:32px 30px;border-radius:14px;text-align:center;
+    background:linear-gradient(135deg, rgba(28,51,97,.55), rgba(10,24,48,.7));
+    border:1px solid rgba(201,163,92,.3);
+  }
+  .suite-cta h3{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:1.55rem;font-weight:600;color:var(--silver-100);margin-bottom:10px;
+  }
+  .suite-cta > p{color:var(--text-muted);font-size:.95rem;max-width:640px;margin:0 auto 24px;line-height:1.65}
+  .suite-perk{
+    display:inline-flex;align-items:center;gap:10px;
+    margin-top:22px;padding:11px 20px;border-radius:999px;
+    background:rgba(201,163,92,.09);border:1px solid rgba(201,163,92,.3);
+    color:var(--silver-300);font-size:.82rem;line-height:1.4;text-align:left;
+  }
+  .suite-perk svg{width:17px;height:17px;flex-shrink:0;color:var(--gold-light)}
+  .suite-perk strong{color:var(--gold-light);font-weight:600}
+
+  @media (max-width: 1024px){
+    .suite-grid{grid-template-columns:repeat(2,1fr)}
+  }
+
+  /* --- bloques y tarjetas destacadas --- */
+  .suite-block{margin-top:52px}
+  .suite-block:first-of-type{margin-top:0}
+  .suite-block-head{
+    display:flex;align-items:center;gap:16px;margin-bottom:26px;
+  }
+  .suite-block-head .num{
+    flex-shrink:0;width:34px;height:34px;border-radius:9px;
+    background:rgba(201,163,92,.12);border:1px solid rgba(201,163,92,.35);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;font-weight:700;color:var(--gold-light);
+  }
+  .suite-block-head h3{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:1.5rem;font-weight:600;color:var(--silver-100);line-height:1.2;margin:0;
+  }
+  .suite-block-head p{margin:3px 0 0;color:var(--text-muted);font-size:.85rem;line-height:1.45}
+  .suite-block-head .line{flex:1;height:1px;background:linear-gradient(90deg,rgba(201,163,92,.3),transparent);min-width:20px}
+
+  .suite-grid.cols-2{grid-template-columns:repeat(2,1fr)}
+
+  .suite-card.featured{border-color:rgba(201,163,92,.42)}
+  .suite-card.featured::after{transform:scaleX(1)}
+  .suite-badge{
+    position:absolute;top:0;right:26px;
+    padding:4px 11px 5px;border-radius:0 0 7px 7px;
+    background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+    color:var(--navy-900);font-size:.6rem;letter-spacing:1.6px;
+    text-transform:uppercase;font-weight:700;
+  }
+  .suite-card.featured .suite-top{padding-top:6px}
+
+  .suite-status.dev{color:var(--gold-light);border-color:rgba(201,163,92,.42);background:rgba(201,163,92,.08)}
+  .suite-status.dev .dot{background:var(--gold)}
+
+  @media (max-width: 1024px){
+    .suite-grid.cols-2{grid-template-columns:1fr}
+  }
+
   /* ============ FOOTER ============ */
   footer{
     background:#040917;padding:60px 24px 30px;
@@ -738,6 +913,7 @@
     .about-features{grid-template-columns:1fr}
     .form-row{grid-template-columns:1fr}
     .diag-includes{grid-template-columns:1fr}
+    .suite-grid{grid-template-columns:1fr}
     .nav-links a:not(.nav-cta){padding:12px 0;display:block}
     section{padding:80px 24px}
   }
@@ -773,6 +949,7 @@
       <a href="#nosotros">Nosotros</a>
       <a href="#servicios">Servicios</a>
       <a href="#sectores">Sectores</a>
+      <a href="#sistemas">AGGO Suite</a>
       <a href="#preguntas">Preguntas</a>
       <a href="#contacto">Contacto</a>
       <a href="#contacto" class="nav-cta">Diagnóstico Gratuito</a>
@@ -1171,6 +1348,286 @@
 <div class="service-area">
   <p><strong>Zona de servicio:</strong> atendemos empresas en <strong>Machala</strong>, Pasaje, Santa Rosa, El Guabo, Huaquillas, Arenillas y los cantones mineros de <strong>Zaruma, Portovelo y Camilo Ponce Enríquez</strong> — y de forma remota en todo el Ecuador.</p>
 </div>
+
+<!-- ============ AGGO SUITE ============ -->
+<section class="suite" id="sistemas">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="suite-brand">
+        <div class="suite-brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5" stroke="currentColor" stroke-width="1.8"/></svg>
+        </div>
+        <div class="suite-brand-text">
+          <span class="n serif">AGGO Suite</span>
+          <span class="s">Sistemas de Gestión</span>
+        </div>
+      </div>
+      <h2 class="section-title">Siete sistemas que hablan el idioma del <span class="accent">regulador ecuatoriano</span></h2>
+      <div class="divider"></div>
+      <p class="section-sub">Cada uno nació resolviendo el problema real de una empresa de El Oro. Se contratan por separado y operan en cualquier compañía; si además lleva su contabilidad con AGGO, esa misma información sustenta el cierre, las provisiones y sus declaraciones, sin que su equipo la arme dos veces.</p>
+    </div>
+
+    <!-- ===== BLOQUE 1: CUMPLIMIENTO ===== -->
+    <div class="suite-block reveal">
+      <div class="suite-block-head">
+        <span class="num serif">I</span>
+        <div>
+          <h3>Cumplimiento y obligaciones legales</h3>
+          <p>Cada uno responde a un regulador con nombre propio: UAFE, MSP, IESS, Ministerio del Trabajo y Superintendencia de Compañías.</p>
+        </div>
+        <span class="line"></span>
+      </div>
+
+      <div class="suite-grid cols-2">
+
+        <!-- UAFE -->
+        <article class="suite-card featured">
+          <span class="suite-badge">Destacado</span>
+          <div class="suite-top">
+            <div class="suite-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7.5 3.4v5.1c0 4.6-3.2 8.8-7.5 10-4.3-1.2-7.5-5.4-7.5-10V6.4L12 3z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M9 12.2l2.2 2.2 4.3-4.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="suite-status live"><span class="dot"></span>En línea</span>
+          </div>
+          <h3 class="serif">Portal UAFE</h3>
+          <p class="suite-tagline">Ordene la debida diligencia de sus clientes y sostenga su matriz de riesgo.</p>
+          <p class="suite-desc">Ser sujeto obligado significa identificar a cada cliente, evaluar su riesgo y conservar la evidencia que le pedirán en una revisión.</p>
+          <ul class="suite-feats">
+            <li>Formulario digital por pasos con firma electrónica validada</li>
+            <li>Cribado automático en dieciocho fuentes nacionales e internacionales</li>
+            <li>Matrices de riesgo sectoriales para minería, vehículos y construcción</li>
+            <li>Renovación anual con recordatorios y recálculo automáticos</li>
+            <li>Bitácora de auditoría y exportación masiva de expedientes</li>
+          </ul>
+          <div class="suite-foot">
+            <p class="suite-reg">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M5 7l7-3 7 3M5 7l-2.5 6a3.5 3.5 0 005 0L5 7zM19 7l-2.5 6a3.5 3.5 0 005 0L19 7z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>UAFE</strong> — debida diligencia, política conozca a su cliente y matriz institucional de riesgo LA/FT.</span>
+            </p>
+            <p class="suite-tie">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 15l6-6M10.5 6.5l1.6-1.6a4 4 0 015.7 5.7l-1.6 1.6M13.5 17.5l-1.6 1.6a4 4 0 01-5.7-5.7l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              Integra con: Prevención de Lavado de Activos
+            </p>
+          </div>
+        </article>
+
+        <!-- MEDICO OCUPACIONAL -->
+        <article class="suite-card featured">
+          <span class="suite-badge">Destacado</span>
+          <div class="suite-top">
+            <div class="suite-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="4.5" width="14" height="16.5" rx="2" stroke="currentColor" stroke-width="1.9"/><path d="M9 4.5V3.6a1 1 0 011-1h4a1 1 0 011 1v.9" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M12 10.5v5M9.5 13h5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+            </div>
+            <span class="suite-status live"><span class="dot"></span>En línea</span>
+          </div>
+          <h3 class="serif">Salud Ocupacional</h3>
+          <p class="suite-tagline">Sostenga la vigilancia de la salud de su personal con evidencia verificable.</p>
+          <p class="suite-desc">La vigilancia de la salud no se demuestra con buena intención, sino con exámenes ejecutados a tiempo y documentos que resistan una inspección.</p>
+          <ul class="suite-feats">
+            <li>Ficha médica ocupacional según el formulario 077 del MSP</li>
+            <li>Exámenes de ingreso, periódicos, de reintegro y de salida</li>
+            <li>Certificados de aptitud con verificación pública por código QR</li>
+            <li>Matriz de vencimientos con semáforo por estado</li>
+            <li>Separación entre la información clínica y talento humano</li>
+          </ul>
+          <div class="suite-foot">
+            <p class="suite-reg">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M5 7l7-3 7 3M5 7l-2.5 6a3.5 3.5 0 005 0L5 7zM19 7l-2.5 6a3.5 3.5 0 005 0L19 7z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>MSP · Ministerio del Trabajo · IESS</strong> — programa de vigilancia de la salud con sus instrumentos oficiales.</span>
+            </p>
+            <p class="suite-tie">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 15l6-6M10.5 6.5l1.6-1.6a4 4 0 015.7 5.7l-1.6 1.6M13.5 17.5l-1.6 1.6a4 4 0 01-5.7-5.7l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              Integra con: Nómina y RRHH
+            </p>
+          </div>
+        </article>
+
+        <!-- VACACIONES Y SST -->
+        <article class="suite-card">
+          <div class="suite-top">
+            <div class="suite-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.9"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M9 15.5l2 2 4-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="suite-status live"><span class="dot"></span>En línea</span>
+          </div>
+          <h3 class="serif">Vacaciones y SST</h3>
+          <p class="suite-tagline">Controle el pasivo por vacaciones y la prescripción que nadie está mirando.</p>
+          <p class="suite-desc">El derecho a vacaciones se acumula mes a mes aunque nadie lo registre, y aparece completo el día del finiquito o del cierre contable.</p>
+          <ul class="suite-feats">
+            <li>Cálculo de días por antigüedad según el Código del Trabajo</li>
+            <li>Control de la prescripción de vacaciones acumuladas</li>
+            <li>Provisión y pasivo económico de vacaciones por empresa</li>
+            <li>Once reportes gerenciales exportables a Excel y PDF</li>
+            <li>Cronograma de planificación del personal por período</li>
+          </ul>
+          <div class="suite-foot">
+            <p class="suite-reg">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M5 7l7-3 7 3M5 7l-2.5 6a3.5 3.5 0 005 0L5 7zM19 7l-2.5 6a3.5 3.5 0 005 0L19 7z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Código del Trabajo · NIIF</strong> — días por antigüedad, prescripción y pasivo reconocido al cierre.</span>
+            </p>
+            <p class="suite-tie">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 15l6-6M10.5 6.5l1.6-1.6a4 4 0 015.7 5.7l-1.6 1.6M13.5 17.5l-1.6 1.6a4 4 0 01-5.7-5.7l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              Integra con: Nómina y RRHH · Contabilidad
+            </p>
+          </div>
+        </article>
+
+        <!-- SOCIETARIO -->
+        <article class="suite-card">
+          <div class="suite-top">
+            <div class="suite-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 4.5a2 2 0 012-2H19a.5.5 0 01.5.5v15a.5.5 0 01-.5.5H6.5a2 2 0 00-2 2v-16z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8 7.5h7.5M8 11h5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <span class="suite-status live"><span class="dot"></span>En línea</span>
+          </div>
+          <h3 class="serif">Societario</h3>
+          <p class="suite-tagline">Lleve al día las actas, el kárdex de accionistas y sus plazos societarios.</p>
+          <p class="suite-desc">Toda compañía debe celebrar junta ordinaria dentro de los tres meses del cierre y mantener su libro de acciones y accionistas al día.</p>
+          <ul class="suite-feats">
+            <li>Libro de actas de junta general con numeración por compañía</li>
+            <li>Kárdex de accionistas con importación del archivo de Supercías</li>
+            <li>Transferencias de acciones con validación del saldo del cedente</li>
+            <li>Talonario y títulos con numeración automática de series</li>
+            <li>Calendario de obligaciones societarias y nombramientos</li>
+          </ul>
+          <div class="suite-foot">
+            <p class="suite-reg">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M5 7l7-3 7 3M5 7l-2.5 6a3.5 3.5 0 005 0L5 7zM19 7l-2.5 6a3.5 3.5 0 005 0L19 7z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Superintendencia de Compañías · Registro Mercantil</strong> — junta ordinaria anual, libro de accionistas y nombramientos.</span>
+            </p>
+            <p class="suite-tie">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 15l6-6M10.5 6.5l1.6-1.6a4 4 0 015.7 5.7l-1.6 1.6M13.5 17.5l-1.6 1.6a4 4 0 01-5.7-5.7l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              Integra con: Gestión Empresarial
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ===== BLOQUE 2: OPERACION ===== -->
+    <div class="suite-block reveal">
+      <div class="suite-block-head">
+        <span class="num serif">II</span>
+        <div>
+          <h3>Control operativo</h3>
+          <p>Orden, trazabilidad y costo real de la operación diaria, con anclaje en la normativa donde corresponde.</p>
+        </div>
+        <span class="line"></span>
+      </div>
+
+      <div class="suite-grid">
+
+        <!-- FLOTA -->
+        <article class="suite-card featured">
+          <span class="suite-badge">Destacado</span>
+          <div class="suite-top">
+            <div class="suite-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 16.5V7a1 1 0 011-1h9a1 1 0 011 1v9.5" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M14 9.5h3.5a1 1 0 01.8.4l2.4 3.3a1 1 0 01.2.6v2.7" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="7.5" cy="17.5" r="2" stroke="currentColor" stroke-width="1.9"/><circle cx="17.5" cy="17.5" r="2" stroke="currentColor" stroke-width="1.9"/><path d="M9.6 17.5h5.9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+            </div>
+            <span class="suite-status live"><span class="dot"></span>En línea</span>
+          </div>
+          <h3 class="serif">Flota Pesada</h3>
+          <p class="suite-tagline">Mantenga habilitada su flota, con costo real por kilómetro y por hora.</p>
+          <p class="suite-desc">Una unidad con documentos vencidos detiene la operación, y el gasto que genera rara vez llega ordenado a la contabilidad.</p>
+          <ul class="suite-feats">
+            <li>Lectura de facturas electrónicas y validación ante el SRI</li>
+            <li>Aviso de Revisión Técnica Vehicular según el dígito de placa</li>
+            <li>Control de combustible con detección de rendimiento anómalo</li>
+            <li>Órdenes de trabajo y costo real por kilómetro u hora</li>
+            <li>Registro de kilometraje y horómetro con foto verificada</li>
+          </ul>
+          <div class="suite-foot">
+            <p class="suite-reg">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M5 7l7-3 7 3M5 7l-2.5 6a3.5 3.5 0 005 0L5 7zM19 7l-2.5 6a3.5 3.5 0 005 0L19 7z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>SRI · ANT · ARCERNNR</strong> — validación de comprobantes, calendario de RTV y registros de mantenimiento.</span>
+            </p>
+            <p class="suite-tie">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 15l6-6M10.5 6.5l1.6-1.6a4 4 0 015.7 5.7l-1.6 1.6M13.5 17.5l-1.6 1.6a4 4 0 01-5.7-5.7l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              Integra con: Sector Minero · Contabilidad
+            </p>
+          </div>
+        </article>
+
+        <!-- SATI -->
+        <article class="suite-card">
+          <div class="suite-top">
+            <div class="suite-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 14v-2a7.5 7.5 0 1115 0v2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M4.5 13.5h1.2a1 1 0 011 1v3a1 1 0 01-1 1H4.5a1.5 1.5 0 01-1.5-1.5v-2a1.5 1.5 0 011.5-1.5zM19.5 13.5h-1.2a1 1 0 00-1 1v3a1 1 0 001 1h1.2a1.5 1.5 0 001.5-1.5v-2a1.5 1.5 0 00-1.5-1.5z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M17.3 18.5v.6a2.4 2.4 0 01-2.4 2.4H13" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+            </div>
+            <span class="suite-status live"><span class="dot"></span>En línea</span>
+          </div>
+          <h3 class="serif">Mesa de Ayuda</h3>
+          <p class="suite-tagline">Centralice las solicitudes internas con responsable, plazo y respuesta documentada.</p>
+          <p class="suite-desc">Cuando los pedidos viven en correos y mensajes personales, nadie puede demostrar quién respondió ni en cuánto tiempo.</p>
+          <ul class="suite-feats">
+            <li>Flujo de estados con matriz de transiciones validada</li>
+            <li>Numeración correlativa anual e historial inmutable</li>
+            <li>Plazos de atención por prioridad y por área</li>
+            <li>Cuatro roles con manuales de usuario incluidos</li>
+          </ul>
+          <div class="suite-foot">
+            <p class="suite-reg">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M5 7l7-3 7 3M5 7l-2.5 6a3.5 3.5 0 005 0L5 7zM19 7l-2.5 6a3.5 3.5 0 005 0L19 7z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Control interno</strong> — evidencia documentada de que la atención de solicitudes efectivamente opera.</span>
+            </p>
+            <p class="suite-tie">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 15l6-6M10.5 6.5l1.6-1.6a4 4 0 015.7 5.7l-1.6 1.6M13.5 17.5l-1.6 1.6a4 4 0 01-5.7-5.7l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              Integra con: Gestión Empresarial
+            </p>
+          </div>
+        </article>
+
+        <!-- SIGED -->
+        <article class="suite-card">
+          <div class="suite-top">
+            <div class="suite-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5.5 4h13l2.5 9v5a1.5 1.5 0 01-1.5 1.5H4.5A1.5 1.5 0 013 18v-5l2.5-9z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M3 13h4l1.5 2.5h7L17 13h4" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="suite-status live"><span class="dot"></span>En línea</span>
+          </div>
+          <h3 class="serif">Disposiciones</h3>
+          <p class="suite-tagline">Compruebe que sus instrucciones fueron leídas, atendidas y respaldadas.</p>
+          <p class="suite-desc">Una disposición enviada por mensaje no deja rastro: no se sabe si se leyó, quién la atendió ni con qué evidencia se cerró.</p>
+          <ul class="suite-feats">
+            <li>Asignación con responsable, plazo y prioridad</li>
+            <li>Acuse de lectura y confirmación digital de recepción</li>
+            <li>Registro de avances con evidencia adjunta obligatoria</li>
+            <li>Tablero de seguimiento y calendario de vencimientos</li>
+          </ul>
+          <div class="suite-foot">
+            <p class="suite-reg">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M5 7l7-3 7 3M5 7l-2.5 6a3.5 3.5 0 005 0L5 7zM19 7l-2.5 6a3.5 3.5 0 005 0L19 7z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Control interno</strong> — trazabilidad de las instrucciones y prueba de su cumplimiento.</span>
+            </p>
+            <p class="suite-tie">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 15l6-6M10.5 6.5l1.6-1.6a4 4 0 015.7 5.7l-1.6 1.6M13.5 17.5l-1.6 1.6a4 4 0 01-5.7-5.7l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              Integra con: Gestión Empresarial
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="suite-cta reveal">
+      <h3 class="serif">¿Quiere ver alguno en funcionamiento?</h3>
+      <p>Le mostramos el sistema con datos de ejemplo y evaluamos juntos si se ajusta a su operación. Cada implantación incluye configuración, carga inicial y capacitación de su equipo. La demostración no tiene costo ni compromiso.</p>
+      <div class="cta-row">
+        <a href="https://wa.me/593991071743?text=Hola%20AGGO%2C%20quiero%20una%20demostraci%C3%B3n%20de%20los%20sistemas%20de%20AGGO%20Suite." target="_blank" rel="noopener" class="btn btn-wa">
+          <svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M23.4 19.5c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.3-.4.3-.8.1-.4-.2-1.6-.6-3-1.8-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.6.2-.2.2-.4.4-.6.1-.2.1-.5 0-.6-.1-.2-.9-2.2-1.3-3-.3-.8-.7-.7-.9-.7H11c-.3 0-.6.1-1 .4-.3.4-1.3 1.3-1.3 3.2 0 1.9 1.4 3.7 1.5 4 .2.3 2.7 4.2 6.6 5.9 2.5 1 3.4 1.1 4.6.9.7-.1 2.3-1 2.6-1.9.3-1 .3-1.8.2-1.9-.1-.2-.4-.3-.8-.5zM16 3C8.8 3 3 8.8 3 16c0 2.5.7 4.8 1.9 6.7L3 29l6.5-1.7C11.3 28.4 13.6 29 16 29c7.2 0 13-5.8 13-13S23.2 3 16 3z"/></svg>
+          Solicitar demostración
+        </a>
+        <a href="#contacto" class="btn btn-ghost">Escribir por el formulario</a>
+      </div>
+      <p class="suite-perk">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.8l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.2l6.1-.8L12 2.8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <span><strong>Clientes de AGGO Associates:</strong> integración con su contabilidad y condiciones preferentes.</span>
+      </p>
+    </div>
+
+  </div>
+</section>
 
 <!-- ============ PROCESS ============ -->
 <section class="process" id="proceso">

@@ -4,3 +4,6 @@ Thumbs.db
 .vscode/
 .idea/
 node_modules/
+
+# Vistas previas locales — NO se publican
+PREVIEW-*.html
